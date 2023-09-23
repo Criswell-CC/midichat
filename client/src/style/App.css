@@ -1,0 +1,13 @@
+.MainPage {
+  text-align: center;
+}
+
+.MainPage-header {
+  padding-top: 5vh;
+  padding-bottom: 2vh;
+}
+
+.Card-container {
+  align-items: "center"; 
+  display: "flex";
+}

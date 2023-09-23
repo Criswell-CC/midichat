@@ -1,0 +1,77 @@
+#piano :focus {
+    outline:none !important;
+}
+  
+#piano {
+    padding: 0;
+    margin: 0;
+}
+
+#piano-container {
+    display: flex;
+    height: 100%;
+}
+  
+#piano li {
+    width:4.5vh;
+    position:relative;
+    border-top:2px solid #222;
+    display: inline-block;
+}
+  
+#piano li a,#piano li div.anchor {
+    height:21.5vh;
+    background:#fff;
+    background:linear-gradient(-30deg,#f5f5f5,#fff);
+    box-shadow:inset 0 1px 0px #fff,inset 0 -1px 0px #fff,inset 1px 0px 0px #fff,inset -1px 0px 0px #fff,0 4px 3px rgba(0,0,0,0.7);
+    border:1px solid #ccc;
+}
+  
+#piano li div.anchor:active, #piano li div.anchor.active {
+    box-shadow:0 2px 2px rgba(0,0,0,0.4);
+    position:relative;
+    top:.3vh;
+    height:20.5vh;
+}
+  
+#piano li div.anchor:active:before, #piano li div.anchor.active:before {
+    width:0px;
+    height:0px;
+    border-width:216px 5px 0px;
+    border-style:solid;
+    border-color:transparent transparent transparent rgba(0,0,0,0.1);
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+  
+#piano li div.anchor:active:after, #piano li div.anchor.active:after {
+    width:0px;
+    height:0px;
+    border-width:216px 5px 0px;
+    border-style:solid;
+    border-color:transparent rgba(0,0,0,0.1) transparent transparent;
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+  
+#piano li span {
+    position:absolute;
+    top:0vh;
+    left:-1.2vh;
+    width:2.3vh;
+    height:13.1vh;
+    z-index:10;
+    background:#333;
+    background:linear-gradient(-20deg,#333,#000,#333);
+    box-shadow:inset 0px -1px 2px rgba(255,255,255,0.4),0 2px 3px rgba(0,0,0,0.4);
+    border-width:.1vh .2vh .72vh;
+    border-style:solid;
+}
+  
+#piano li span:active, #piano li span.active {
+    border-bottom-width:0.4vh;
+    height:13.3vh;
+    box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
+}

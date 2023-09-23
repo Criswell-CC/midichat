@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  next:
+    build:
+      context: ./client
+      args:
+        - NODE_ENV=${NODE_ENV:-local}
+  server:
+    build:
+      context: ./server
+      args:
+        - NODE_ENV=${NODE_ENV:-local}
+  e2e:
+    image: cypress
+    build: ./client/cypress/e2e
+    container_name: cypress
+    depends_on:
+      - next
+      - server
+    environment:
+      - CYPRESS_baseUrl=http://next
+    command: npx cypress run
+    volumes:
+      - ./client/cypress:/app/cypress
+      - ./client/cypress.config.js:/app/cypress.config.js
