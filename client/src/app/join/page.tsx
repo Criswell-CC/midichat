@@ -32,8 +32,7 @@ const Join = () => {
         })
 
         try {
-
-            const res = await fetch(process.env.REACT_APP_SERVER_URL + ENDPOINTS.CHECK_JOIN_ROOM, { method: 'POST', body: body, headers: {
+            const res = await fetch(process.env.SERVER_URL + ENDPOINTS.CHECK_JOIN_ROOM, { method: 'POST', body: body, headers: {
                 'Content-Type': 'application/json'
               } 
             })
@@ -43,7 +42,7 @@ const Join = () => {
             if (json.valid) {
                 const roomType = json.room_type
 
-                // this is a hack because app router from next/navigation doesn't support passing query strings or state
+                // this is a hack because the app router from next/navigation doesn't support passing query strings or state
                 // @ts-ignore
                 router.push('/' + roomType + '/' + roomIdInput, { query: { userType: "listener" }})
             }
