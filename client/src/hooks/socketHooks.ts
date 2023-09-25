@@ -86,9 +86,9 @@ export const useSetSocket = (authInfo: IAuthInfo,
     useEffect(() => {
         if (authInfo.authenticated && !socketInformation.socket) {
 
-            if (typeof process.env.REACT_APP_SOCKET_URL !== 'undefined') {
+            if (typeof process.env.SOCKET_URL !== 'undefined') {
                     
-                const socket: WebSocket = new WebSocket(process.env.REACT_APP_SOCKET_URL + '?roomId=' + room.roomId + '&userId=' + user.id + 
+                const socket: WebSocket = new WebSocket(process.env.SOCKET_URL + '?roomId=' + room.roomId + '&userId=' + user.id + 
                     '&userType=' + user.type)
 
                 socket.onerror = (event: Event) => {

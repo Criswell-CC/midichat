@@ -7,11 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start-server": "npm start",
     "test": "cypress run",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "start-server-and-run-tests": "concurrently --kill-others \"npm run dev\" \"npm run cypress:run\" "
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

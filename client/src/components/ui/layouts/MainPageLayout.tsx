@@ -18,13 +18,13 @@ const MainPageLayout = () => {
             <Slide direction="right" in={true} unmountOnExit={true}>
                 <Fade in={true}>
                     <Stack direction="row" spacing={3} justifyContent="center">
-                        <Card elevation={9}>
+                        <Card elevation={9} id='broadcast-room-card'>
                             <Link href={{pathname: '/broadcast/' + generateRoomId(), query: {userType: 'broadcaster'}}} style={{ display: "inline-block", paddingTop: "2.5vh", fontSize: ".93em" }}> Broadcast to large audience </Link>
                         </Card>
-                        <Card elevation={8}>
+                        <Card elevation={8} id='p2p-room-card'>
                             <Link href={{pathname: '/p2p/' + generateRoomId(), query: {userType: 'broadcaster'}}} style={{ display: "inline-block", paddingTop: "3.5vh", fontSize: ".93em" }}> Perform for a small crowd </Link>
                         </Card>
-                        <Card elevation={8}>
+                        <Card elevation={8} id='join-room-card'>
                             <Link href='/join' style={{ display: "inline-block", paddingTop: "3.5vh", fontSize: ".93em" }}>Join a room</Link>
                         </Card>
                     </Stack>
